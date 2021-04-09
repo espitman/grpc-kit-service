@@ -1,0 +1,12 @@
+{
+  "port": 8080,
+  "db": {
+    "name": "name",
+    "uri": "mongodb://username:password@localhost:27017?retryWrites=false"
+  },
+  "neo4j": {
+    "uri": "bolt://localhost:7687",
+    "username": "username",
+    "password": "password"
+  }
+}
