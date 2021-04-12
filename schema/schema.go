@@ -2,13 +2,15 @@ package schema
 
 import (
 	"encoding/json"
+	"time"
 
-	"github.com/Kamva/mgm"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type Kit struct {
-	mgm.DefaultModel `bson:",inline"`
-	Title            string `json:"title" bson:"title"`
+	ID        primitive.ObjectID `bson:"_id,omitempty"`
+	CreatedAt time.Time          `json:"created_at" bson:"created_at"`
+	UpdatedAt time.Time          `json:"updated_at" bson:"updated_at"`
 }
 
 func (t *Kit) Unmarshal(entry interface{}) Kit {
